@@ -1,16 +1,39 @@
-# This is a sample Python script.
+from threading import *;
+import time;
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-float dencidade=200.2
+s=Semaphore(2)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+ 
 
+def example(nome,idade):
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+  for i in range(3):
+    
+      cont+ 1
+      s.acquire()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+      print("Olá",nome, idade)
+    
+      time.sleep(2)
+
+      s.release()
+
+      
+
+threadA=Thread(target=example, args=("João",15))
+
+threadB=Thread(target=example, args=("José",20))
+
+threadC=Thread(target=example, args=("Maria",26))
+
+threadD=Thread(target=example, args=("Ana",29))
+
+ 
+
+threadA.start()
+
+threadB.start()
+
+threadC.start()
+
+threadD.start() 
