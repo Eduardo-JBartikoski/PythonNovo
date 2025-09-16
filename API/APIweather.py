@@ -1,10 +1,9 @@
 import tkinter as tk
 import requests
+import os
 
-
-API_KEY = '881f62ea83e94e4187e235830251009'
-URL = 'http://api.weatherapi.com/v1/current.json'
-
+API_KEY = os.getenv("API_KEY")
+URL = os.getenv("WEATHER_URL")
 
 def buscar_tempo():
     parametros = {
